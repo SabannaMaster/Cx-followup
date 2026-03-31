@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Executive Cx Terminal</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #0a0a0c;
+            --card-bg: #141417;
+            --accent-gold: #d4af37;
+            --accent-glow: rgba(212, 175, 55, 0.15);
+            --text-main: #e4e4e7;
+            --text-dim: #a1a1aa;
+            --border: #27272a;
+            --success: #10b981;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: var(--bg);
+            color: var(--text-main);
+            margin: 0;
+            padding: 50px 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        .terminal-wrapper {
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .header-section {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 40px;
+            border-left: 4px solid var(--accent-gold);
+            padding-left: 20px;
+        }
+
+        .header-section h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 2rem;
+            margin: 0;
+            letter-spacing: -1px;
+            text-transform: uppercase;
+        }
+
+        .header-section span {
+            color: var(--text-dim);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+        }
+
+        .stats-bar {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: var(--card-bg);
+            padding: 20px;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+        }
+
+        .stat-card small { color: var(--text-dim); font-size: 0.75rem; text-transform: uppercase; }
+        .stat-card div { font-size: 1.5rem; font-weight: 700; margin-top: 5px; color: var(--accent-gold); }
+
+        .table-wrapper {
+            background: var(--card-bg);
+            border-radius: 16px;
+            border: 1px solid var(--border);
+            overflow: hidden;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: left;
+        }
+
+        thead {
+            background: rgba(255, 255, 255, 0.02);
+            border-bottom: 1px solid var(--border);
+        }
+
+        th {
+            padding: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            color: var(--text-dim);
+        }
+
+        tbody tr {
+            border-bottom: 1px solid rgba(39, 39, 42, 0.5);
+            transition: all 0.3s ease;
+        }
+
+        tbody tr:hover {
+            background: rgba(212, 175, 55, 0.03);
+            box-shadow: inset 4px 0 0 var(--accent-gold);
+        }
+
+        td {
+            padding: 22px 20px;
+            font-size: 0.9rem;
+        }
+
+        .customer-name {
+            font-weight: 600;
+            color: #fff;
+            display: block;
+        }
+
+        .customer-id {
+            font-size: 0.75rem;
+            color: var(--text-dim);
+        }
+
+        .amount-highlight {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 700;
+            color: var(--accent-gold);
+            font-size: 1.1rem;
+        }
+
+        .badge {
+            padding: 5px 12px;
+            border-radius: 4px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            border: 1px solid var(--border);
+        }
+
+        .badge-remark { color: #fff; background: rgba(255, 255, 255, 0.05); }
+        .badge-paid { color: var(--success); border-color: var(--success); background: rgba(16, 185, 129, 0.1); }
+
+        .btn-view {
+            color: var(--text-main);
+            text-decoration: none;
+            border: 1px solid var(--border);
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            transition: 0.2s;
+        }
+
+        .btn-view:hover {
+            background: var(--text-main);
+            color: var(--bg);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="terminal-wrapper">
+        <div class="header-section">
+            <div>
+                <span>FINANCIAL TERMINAL v3.1</span>
+                <h1>Portfolio Recovery</h1>
+            </div>
+            <div style="text-align: right;">
+                <span id="date-now">Q1 FISCAL 2026</span>
+            </div>
+        </div>
+
+        <div class="stats-bar">
+            <div class="stat-card">
+                <small>Total Outstanding</small>
+                <div>₹1,674,510</div>
+            </div>
+            <div class="stat-card">
+                <small>High Priority</small>
+                <div>12 Files</div>
+            </div>
+            <div class="stat-card">
+                <small>Performance</small>
+                <div style="color: var(--success);">+14.2%</div>
+            </div>
+        </div>
+
+        <div class="table-wrapper">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Identity</th>
+                        <th>Valuation</th>
+                        <th>Intelligence</th>
+                        <th>Execution</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            <span class="customer-name">SADASHIV SITARAM PARALE</span>
+                            <span class="customer-id">ID: 8104482505</span>
+                        </td>
+                        <td><span class="amount-highlight">₹55,475</span></td>
+                        <td><span class="badge badge-remark">15TH DOUBT</span></td>
+                        <td><a href="#" class="btn-view">ACCESS</a></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="customer-name">PRADEEPKUMAR N</span>
+                            <span class="customer-id">ID: 9902582632</span>
+                        </td>
+                        <td><span class="amount-highlight">₹1,40,830</span></td>
+                        <td><span class="badge badge-remark">1ST EMI SCHEDULED</span></td>
+                        <td><a href="#" class="btn-view">ACCESS</a></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="customer-name">NAVILA N RISALDAR</span>
+                            <span class="customer-id">ID: 8766799890</span>
+                        </td>
+                        <td><span class="amount-highlight">₹15,458</span></td>
+                        <td><span class="badge badge-paid">COMPLETED</span></td>
+                        <td><a href="#" class="btn-view">ACCESS</a></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span class="customer-name">DHEERAJ KUMAR</span>
+                            <span class="customer-id">ID: 9582073420</span>
+                        </td>
+                        <td><span class="amount-highlight">₹69,840</span></td>
+                        <td><span class="badge badge-remark">26TH FOLLOWUP</span></td>
+                        <td><a href="#" class="btn-view">ACCESS</a></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>
