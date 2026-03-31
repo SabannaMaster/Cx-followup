@@ -616,5 +616,37 @@
         </table>
     </div>
 
+	<script>
+    document.querySelectorAll('td a').forEach(btn => {
+        // Apply Premium Button Styles
+        Object.assign(btn.style, {
+            background: '#3498db',
+            color: '#ffffff',
+            padding: '6px 14px',
+            borderRadius: '6px',
+            textDecoration: 'none',
+            fontWeight: 'bold',
+            fontSize: '12px',
+            display: 'inline-block',
+            transition: 'all 0.3s ease',
+            boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+            textTransform: 'uppercase'
+        });
+
+        // Add Hover Effects
+        btn.onmouseover = () => {
+            btn.style.background = '#2980b9';
+            btn.style.transform = 'translateY(-2px)';
+            btn.style.boxShadow = '0 4px 8px rgba(0,0,0,0.2)';
+        };
+        
+        btn.onmouseout = () => {
+            btn.style.background = '#3498db';
+            btn.style.transform = 'translateY(0)';
+            btn.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+        };
+    });
+</script>
+
 </body>
 </html>
